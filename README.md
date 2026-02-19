@@ -583,6 +583,27 @@ Then commit your change, make a new release (for example ``1.0.1``) and retry (o
 ``-v 1.0.1`` when calling mlflow this time). Now the run should succeed and voit la', 
 you have trained your new model on the new data.
 
+# Final run with fix above
+
+```
+wandb: Syncing run silver-pond-81
+wandb: ⭐️ View project at https://wandb.ai/krseven-j/nyc_airbnb
+wandb: 🚀 View run at https://wandb.ai/krseven-j/nyc_airbnb/runs/4byhe2rb
+2026-02-19 08:10:12,767 Minimum price: 10, Maximum price: 350
+2026-02-19 08:10:12,793 Preparing sklearn pipeline
+2026-02-19 08:10:12,793 Fitting
+2026-02-19 08:10:14,512 Scoring
+2026-02-19 08:10:14,606 Score: 0.594355758950539
+2026-02-19 08:10:14,606 MAE: 31.899746277880148
+2026-02-19 08:10:14,606 Exporting model
+wandb: Adding directory to artifact (random_forest_dir)... Done. 0.1s
+wandb: 
+wandb: 🚀 View run silver-pond-81 at: https://wandb.ai/krseven-j/nyc_airbnb/runs/4byhe2rb
+wandb: Find logs at: wandb/run-20260219_081011-4byhe2rb/logs
+2026/02/19 08:10:20 INFO mlflow.projects: === Run (ID 'bf7013e712f84987b954933760622584') succeeded ===
+2026/02/19 08:10:20 INFO mlflow.projects: === Run (ID '5ff3e215ec174e81a1e75874a8f4cc4b') succeeded ===
+```
+
 ## In case of errors
 
 ### Environments
