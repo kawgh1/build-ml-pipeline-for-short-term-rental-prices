@@ -1,0 +1,21 @@
+name: basic_cleaning
+
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      input_artifact: {type: str, description: "W&B artifact name for raw dataset"}
+      output_artifact: {type: str, description: "Name for cleaned dataset artifact"}
+      output_type: {type: str, description: "Type of output artifact, e.g., dataset"}
+      output_description: {type: str, description: "Description of cleaned dataset"}
+      min_price: {type: float, description: "Minimum price to filter outliers"}
+      max_price: {type: float, description: "Maximum price to filter outliers"}
+    command: >
+      python run.py
+      --input_artifact {input_artifact}
+      --output_artifact {output_artifact}
+      --output_type {output_type}
+      --output_description {output_description}
+      --min_price {min_price}
+      --max_price {max_price}

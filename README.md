@@ -71,6 +71,14 @@ file provided in the root of the repository and activate it:
 ```bash
 > conda env create -f environment.yml
 > conda activate nyc_airbnb_dev
+> conda install -c conda-forge setuptools=68.0.0 wheel -y
+> python -c "import pkg_resources; print(pkg_resources.__file__)"
+> python -m ipykernel install --user --name nyc_airbnb_dev --display-name "Python (nyc_airbnb_dev)"
+
+> conda install -c conda-forge ipywidgets=8 -y
+> python -m ipykernel install --user --name nyc_airbnb_dev --display-name "Python (nyc_airbnb_dev)"
+> conda install cookiecutter
+
 ```
 
 ### Get API key for Weights and Biases
@@ -227,7 +235,7 @@ notebook can be understood by other people like your colleagues
 
 2. Now execute the `eda` step:
    ```bash
-   > mlflow run src/eda
+    mlflow run src/eda --env-manager=local
    ```
    This will install Jupyter and all the dependencies for `pandas-profiling`, and open a Jupyter notebook instance.
    Click on New -> Python 3 and create a new notebook. Rename it `EDA` by clicking on `Untitled` at the top, beside the
@@ -505,6 +513,19 @@ activate it explicitly on the command line:
 ```bash
 > mlflow run . -P steps=test_regression_model
 ```
+wandb: ⭐️ View project at https://wandb.ai/krseven-j/nyc_airbnb
+wandb: 🚀 View run at https://wandb.ai/krseven-j/nyc_airbnb/runs/hkdfo6dd
+2026-02-19 07:47:51,461 Downloading artifacts
+wandb:   5 of 5 files downloaded.  
+2026-02-19 07:47:53,525 Loading model and performing inference on test set
+2026-02-19 07:47:54,165 Scoring
+2026-02-19 07:47:54,203 Score: 0.5808443932463209
+2026-02-19 07:47:54,203 MAE: 33.288321127244785
+wandb: 
+wandb: 🚀 View run fancy-elevator-73 at: https://wandb.ai/krseven-j/nyc_airbnb/runs/hkdfo6dd
+wandb: Find logs at: wandb/run-20260219_074750-hkdfo6dd/logs
+2026/02/19 07:47:55 INFO mlflow.projects: === Run (ID '922f46cec8f746e9947528142f17bb98') succeeded ===
+2026/02/19 07:47:55 INFO mlflow.projects: === Run (ID 'a7a3d21599e24f90bd4869f36ec511a3') succeeded ===
 
 ### Visualize the pipeline
 You can now go to W&B, go the Artifacts section, select the model export artifact then click on the
