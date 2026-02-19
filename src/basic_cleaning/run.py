@@ -30,6 +30,10 @@ def go(args):
     max_price = args.max_price
     df_clean = df[(df['price'] >= min_price) & (df['price'] <= max_price)]
 
+    # handle bad data outside the expected boundaries in the test validation dataset
+    idx = df_clean['longitude'].between(-74.25, -73.50) & df_clean['latitude'].between(40.5, 41.2)
+    df_clean = df_clean[idx].copy()
+
     # save clean df
     df_clean.to_csv(args.output_artifact, index=False)
 
