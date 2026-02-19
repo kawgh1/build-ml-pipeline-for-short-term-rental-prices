@@ -513,6 +513,10 @@ activate it explicitly on the command line:
 ```bash
 > mlflow run . -P steps=test_regression_model
 ```
+
+<br>
+
+```
 wandb: ⭐️ View project at https://wandb.ai/krseven-j/nyc_airbnb
 wandb: 🚀 View run at https://wandb.ai/krseven-j/nyc_airbnb/runs/hkdfo6dd
 2026-02-19 07:47:51,461 Downloading artifacts
@@ -526,6 +530,9 @@ wandb: 🚀 View run fancy-elevator-73 at: https://wandb.ai/krseven-j/nyc_airbnb
 wandb: Find logs at: wandb/run-20260219_074750-hkdfo6dd/logs
 2026/02/19 07:47:55 INFO mlflow.projects: === Run (ID '922f46cec8f746e9947528142f17bb98') succeeded ===
 2026/02/19 07:47:55 INFO mlflow.projects: === Run (ID 'a7a3d21599e24f90bd4869f36ec511a3') succeeded ===
+```
+
+<br>
 
 ### Visualize the pipeline
 You can now go to W&B, go the Artifacts section, select the model export artifact then click on the
